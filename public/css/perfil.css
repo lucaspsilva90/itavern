@@ -1,0 +1,148 @@
+main{
+    max-width: 1170px;
+    background-color: white;
+    margin: 0 auto;
+    box-shadow: var(--box-shadow)
+}
+
+hr{
+    margin: 20px auto;
+    width: 60%;
+}
+
+.container{
+    position: relative;
+    padding-bottom: 20px;
+}
+
+#page-name{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--clr-primary);
+    padding-bottom: .5rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+
+
+.separator{
+    width: 70%;
+    margin: auto;
+    height: 4px;
+    background: linear-gradient(to left,
+    var(--clr-primary-light),
+    var(--clr-primary),
+    var(--clr-primary-light));
+}
+
+.container form h4{
+    color: #a6401b;
+    text-align: center;
+    padding-top: 15px;
+    margin-bottom: 0;
+}
+
+.container #perfil-header{
+    padding-top: 10px;
+}
+
+.container #perfil-header input{
+    display: block;
+    width: auto;
+    margin: 15px auto;
+}
+
+#perfil-main{
+    padding: 10px;
+}
+
+#imgPerfil{  
+    cursor: pointer;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    border: solid black;
+    border-width: 0.3px;
+}
+#imgPerfil::-webkit-file-upload-button {
+    background: var(--clr-primary);
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    border-radius: .2rem;
+    padding: 0.5rem;
+}
+
+#imgUser{
+    border-radius: 50%;
+    max-width: 120px;
+    min-width: 120px;
+    max-height: 120px;
+    min-height: 120px;
+    width: auto;
+    height: auto;
+}
+
+#perfil-main .content .dadosUser{
+    position: relative;
+    width: 65%;
+    margin: 0 auto;
+    margin: 8px auto;
+}
+
+#perfil-main .content label{
+    position: relative;
+    left: 50px;
+}
+
+#perfil-main .content input{
+    position: absolute;
+    right: 50px;
+}
+
+#perfil-main .content select{
+    position: absolute;
+    min-width: 120px;
+    right: 50px;
+}
+
+.container #botaoSubmit{
+    width: 152px;
+    margin: 0 auto;
+}
+
+.container #botaoSubmit button{
+    width: 150px;
+} 
+footer{
+    display: none;
+}
+
+@media (min-width: 992px) {
+    #perfil-main .content label{
+        position: relative;
+        left: 150px;
+    }
+    
+    #perfil-main .content input{
+        position: absolute;
+        right: 150px;
+    }
+    
+    #perfil-main .content select{
+        position: absolute;
+        min-width: 140px;
+        right: 150px;
+    }
+    
+    .container #botaoSubmit{
+        width: 152px;
+        margin: 0 auto;
+    }
+    
+    .container #botaoSubmit button{
+        width: 150px;
+    } 
+}

@@ -1,0 +1,74 @@
+<%- include('parts/head',{title:'iTavern | Perfil'}); %>
+<link rel="stylesheet" href="/css/perfil.css">
+<%- include('./criarSala',{jogos}); %>
+<%- include('parts/navbar', {current_page:'perfil'}); %>
+
+<main>
+    <span class="nav-btn" id="nav-btn">
+        <i class="fas fa-bars"></i>
+      </span>
+    <div class="container">
+        <h3 id="page-name">Editar perfil</h3>
+        <div class="separator"></div>
+        <form id="formPerfil" action="/cadastro/update?_method=PUT" method="POST" enctype="multipart/form-data">
+            <h4>Alterar foto do perfil</h4>
+            <div id="perfil-header">
+                <img src="<%= usuario.img_perfil %>" alt="Foto de perfil" class="profile-picture" id="imgUser" />
+                <div class="upload">
+                    <input type="file" name="imgPerfil" id="imgPerfil">
+                </div>
+            </div>
+            <hr>
+            <h4>Alterar dados do perfil</h4>
+            <div id="perfil-main">
+                <div class="content">
+                    <div class="dadosUser">
+                        <label for="nomePerfil">Nickname:</label>
+                        <input type="text" id="nomePerfil" name="nickname" value="<%= usuario.nickname %>">
+                    </div>
+
+                    <div class="dadosUser">
+                        <label for="nomeReal">Nome real</label>
+                        <input type="text" id="nomeReal" name="nome" value="<%= usuario.nome %>">
+                    </div>
+                    
+                    <div class="dadosUser">
+                        <label for="emailUser">Email:</label>
+                        <input type="text" name="emailUser" id="emailUser" value="<%= usuario.email %>">
+                    </div>
+
+                    <div class="dadosUser">
+                        <label for="cepUser">CEP</label>
+                        <input type="text" id="cepUser" name="cepUser" value="<%= usuario.cep %>">
+                    </div>
+
+                    <div class="dadosUser">
+                        <label for="cidadeUser">Cidade</label>
+                        <input type="text" name="cidadeUser" id="cidadeUser" value="">
+                    </div>
+
+                    <div class="dadosUser">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" name="bairro" id="bairro" value="">
+                    </div>
+
+                    <div class="dadosUser">
+                        <label for="ruaCasa">Rua</label>
+                        <input type="text" id="ruaCasa" name="ruaCasa" value=""><br>
+                    </div>
+
+                    <div class="dadosUser">
+                        <label for="numeroCasa">Número</label>
+                        <input type="text" id="numeroCasa" name="numeroCasa" value="<%= usuario.numero %>">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div id="botaoSubmit">
+                <button type="submit">Salvar</button>
+            </div>
+        </form>
+    </div>
+    <script src="/javascripts/editarPerfil.js"></script>
+</main>
+<%- include('parts/foot'); %>

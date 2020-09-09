@@ -1,0 +1,294 @@
+body {
+  background-color: var(--clr-primary-bg);
+}
+
+.main-content {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  margin-left: auto;
+}
+
+.group-chat {
+  min-width: 0;
+  flex: 1 1;
+}
+
+
+/* Group Header */
+
+.group-header {
+  padding: 0.5rem;
+  background-color: var(--clr-grey-3);
+  display: flex;
+  align-items: center;
+  height: 54px;
+}
+
+.nav-btn {
+  position: initial;
+  margin-bottom: 5px;
+}
+
+.header-icon {
+  margin-left: .5rem;
+  margin-right: 1rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  border: solid 3px var(--clr-grey-5);
+  color: white;
+  background-color: var(--clr-primary-dark);
+  overflow: hidden;
+}
+
+.group-name {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+}
+
+.group-msg-search {
+  margin-right: 0.5rem;
+  margin-left: auto;
+}
+
+.input-group {
+  width: 250px;
+  margin-left: auto;
+  margin-right: 3rem;
+}
+
+.form-control {
+  letter-spacing: var(--spacing);
+}
+
+.search-msg {
+  display: none;
+}
+
+#nav-btn-groups {
+  z-index: 11;
+  margin-left: auto;
+  margin-right: .5rem;
+}
+
+/* ============================== CHAT ======================================== */
+
+.chat {
+  margin-top: 0;
+  height: calc(100vh - 54px);
+  position: relative;
+  background-color: #99999920;
+}
+
+.message-box {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+
+.chat-control {
+  height: 3rem;
+}
+
+.msg-text {
+  padding-left: 1rem;
+}
+
+.message-area {
+  height: calc(100% - 3rem);
+  padding: 1rem 0;
+  overflow-y: auto;
+}
+
+.chat-msg {
+  position: relative;
+  max-width: 80%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  color: #111111;
+  background-color: #cccccc;
+  border-radius: 0 var(--radius) var(--radius) var(--radius);
+  padding: 0.8rem;
+  text-align: justify;
+}
+
+.msg {
+  word-wrap: break-word;
+}
+
+.chat-msg:nth-child(1) {
+  margin-top: 0;
+}
+
+p {
+  margin: 0;
+  word-wrap: break-word;
+  color: black;
+}
+
+.chat-msg h4 {
+  font-size: 1rem;
+  color: green;
+}
+
+.datetime {
+  position: absolute;
+  font-size: 0.9rem;
+  top: 5px;
+  right: 15px;
+  color: #777777;
+}
+
+.my-msg {
+  margin-left: auto;
+  margin-right: 1rem;
+  background-color: var(--clr-primary-light);
+  border-radius: var(--radius) var(--radius) 0 var(--radius);
+}
+
+.my-msg h4 {
+  color: var(--clr-primary-dark);
+}
+
+.show-sidebar {
+  display: initial;
+  position: fixed;
+  right: 0;
+  background-color: var(--clr-primary-light);
+  border-radius: var(--radius) 0 0 var(--radius);
+  box-shadow: var(--box-shadow-heavy);
+  height: 100vh;
+  z-index: 10;
+}
+
+/*  */
+
+
+@media screen and (min-width: 1600px) {
+  .main-content {
+    max-width: calc(100% - 250px);
+  }
+
+  .navbar-c {
+    width: 250px;
+  }
+
+  .nav-items {
+    padding-left: 0.75rem;
+  }
+}
+
+footer {
+  display: none;
+}
+
+
+/* ==================================Aside======================================= */
+
+aside {
+  flex: 0 0 200px;
+  padding: 1rem;
+  overflow-y: auto;
+  display: none;
+}
+
+.btn-grupo {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.cover-container {
+  position: relative;
+}
+
+.group-icon {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, +50%);
+  font-size: 2rem;
+  border-radius: 50%;
+  border: solid 3px var(--clr-grey-10);
+  color: white;
+  background-color: var(--clr-primary-dark);
+  overflow: hidden;
+}
+
+.card {
+  transition: var(--transition);
+  position: relative;
+  border-radius: var(--radius);
+  box-shadow: 0 5px 10px rgb(0, 0, 0, 0.1);
+  font-family: var(--ff-primary);
+  margin-bottom: 2rem;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card-body {
+  border-radius: var(--radius);
+  background-color: var(--clr-grey-10);
+}
+
+.card-img-top {
+  height: 14vh;
+  object-fit: cover;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.group-title {
+  margin-top: 10px;
+  letter-spacing: 0;
+  margin-bottom: 5px;
+}
+
+.group-game {
+  font-family: var(--ff-secondary);
+  color: var(--clr-primary-dark);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.next-game {
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 7vh;
+}
+
+
+@media screen and (min-width:992px) {
+  #nav-btn-groups {
+    display: none;
+  }
+
+  aside {
+    display: block;
+  }
+
+  .chat-msg {
+    max-width: 700px;
+    width: 480px
+  }
+
+  .search-msg {
+    display: flex;
+  }
+
+  .header-icon {
+    margin-left: 2.5rem;
+    margin-right: 1rem;
+  }
+}

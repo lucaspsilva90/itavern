@@ -1,0 +1,46 @@
+<%- include('parts/head',{title:'iTavern | Grupos'}); %>
+<link rel="stylesheet" href="/css/grupos.css" />
+<%- include('./criarSala',{jogos}); %>
+<%- include('parts/navbar', {current_page:'grupos'}); %>
+<div class="main-content">
+  <main class="group-chat">
+    <div class="group-header">
+      <span class="nav-btn" id="nav-btn">
+        <i class="fas fa-fw fa-bars"></i>
+      </span>
+      <i class="fas fa-hat-wizard fa-fw header-icon"></i>
+      <h4 class="group-name"><%= grupo.nome %></h4>
+      <p class="invi" id="refGrupo"><%= grupo.id %></p>
+      <!-- <div class="input-group search-msg">
+        <input type="text" name="searchText" class="form-control" placeholder="busca" aria-label="Recipient's username"
+          aria-describedby="button-addon2" />
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary form-control" type="submit" id="button-addon2">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+      <span class="nav-btn" id="nav-btn-groups">
+        <i class="fas fa-fw fa-user-friends"></i>
+      </span> -->
+    </div>
+    <div class="chat">
+      <div class="message-area">
+        
+        </div>
+      </div>
+      <form class="input-group message-box" id="formChat">
+        <input type="text" name="msgText" class="form-control msg-text chat-control" placeholder="Envie uma mensagem"
+          aria-label="Recipient's username" aria-describedby="button-addon2" id='mensagem' />
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary form-control chat-control" type="submit" id="button-addon2">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>
+<!-- <script src="/javascripts/groups-sidebar.js"></script> -->
+<script src="/javascripts/chat.js"></script>
+<%- include('parts/foot'); %>

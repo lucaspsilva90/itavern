@@ -1,0 +1,140 @@
+  <div class="modal fade" id="exampleModalEdit<%= x %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" id="dXGCriar" role="document">
+      <div class="modal-content" id="dGGCriar">
+        <div class="modal-header">
+          <div class="titulo">
+            <h5 class="modal-title" id="exampleModalLabel">Edite o grupo</h5>
+          </div>
+          <div class="botao">
+            <button type="button" name="fecha" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">X</span>
+            </button>
+          </div>
+        </div>
+        <p class="invi"><%= grupo.diasReuniao %></p>
+        <div class="modal-body">
+          <form action="/grupos/<%= grupo.id %>/update?_method=PUT" class="formulario" method="post" enctype="multipart/form-data">
+    
+            <div class="nomeGrupo">
+                <label for="nomeGrupo">Nome do Grupo:</label>
+                <input type="text" name="nome" id="nomeGrupo" value="<%= grupo.nome %>">
+            </div>
+        
+            <div class="nomeJogo">
+                <label for="nomeJogo">Nome do Jogo:</label>
+                    <select name="nomeJogo" id="nomeJogo">
+                        <option selected value="<%= grupo.jogoDoGrupo.id %>" ><%= grupo.jogoDoGrupo.nome %></option>
+                        <% for(jogo of jogos){ %>
+                            <% if(jogo.id != grupo.jogoDoGrupo.id) { %>
+                              <option value="<%= jogo.id %>"><%= jogo.nome%></option>
+                            <% } %>
+                        <%  }  %>
+                    </select>
+            </div>
+
+            <div class="inicio">
+                <label for="inicio">Início das Reuniões:</label>
+                <input type="text" class=" inicio-edit" name="inicioReuniao" id="inicio" value="<%= grupo.inicioReuniao %>" maxlength="10"><!-- calendario será aprimorado -->
+            </div>
+
+            <div class="horario">
+              <label for="horario">Horario das Reuniões:</label>
+              <input type="time" min="00:00" max="23:59" name="horario" id="horario" value="<%= grupo.horario %>">
+          </div>
+
+          <div class="duracao">
+            <label for="duracao">Tempo de jogo:</label>
+            <input type="text" class="duracao-edit" name="tempoJogo" min="0" id="duracao" maxlength="5" value="<%= grupo.tempoJogo %>">
+          </div>
+
+          <div class="numJogadores">
+            <label for="numJogador">Nº de Jogadores:</label>
+            <input type="number" class="jog-edit" name="numJogador" id="numJogador" min="2" step="1" pattern="\d*" maxlength="2" value="<%= grupo.numJogadores %>"  >
+          </div>
+        
+            <div class="endereco">
+                <div class="cep">
+                    <label for="cep">CEP:</label>
+                    <input type="text" class="cep-edit" name="cep" id="cep-edit" placeholder="Apenas números" value="<%= grupo.cep %>" 
+                     maxlength="9">
+                </div>
+
+                <div class="numero">
+                  <label for="numero">Número:</label>
+                  <input type="text" class="numero-edit" name="numero" id="numero" value="<%= grupo.numero %>">
+                </div>
+      
+                <div class="complemento">
+                  <label for="complemento">Complemento:</label>
+                  <input type="text" name="complemento" id="complemento" value="<%= grupo.complemento %>">
+                </div>
+        
+                <div class="cidade">
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" name="cidade" id="cidade" disabled>
+                </div>
+        
+                <div class="rua">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" name="endereco" id="endereco" value="" >
+                </div>
+            </div>
+
+            <label id="textOpcoes">Dias de reunião:</label>
+
+            <div class="opcoes">
+                <div class="diaReuniao">
+                    <div class="dia">
+                      <input type="checkbox" name="diaReuniao" id="Domingo" value="Domingo" >
+                      <label for="domingo">Domingo</label>
+                    </div>
+                    <div class="dia">
+                      <input type="checkbox" name="diaReuniao" id="Segunda-Feira" value="Segunda-Feira" >
+                      <label for="segunda">Segunda-Feira</label>
+                    </div>
+                    <div class="dia">
+                      <input type="checkbox" name="diaReuniao" id="Terça-Feira" value="Terça-Feira" >
+                      <label for="terca">Terça-Feira</label>
+                    </div>
+                    <div class="dia">
+                      <input type="checkbox" name="diaReuniao" id="Quarta-Feira" value="Quarta-Feira" >
+                      <label for="quarta">Quarta-Feira</label>
+                    </div>
+                    <div class="dia">
+                      <input type="checkbox" name="diaReuniao" id="Quinta-Feira" value="Quinta-Feira" >
+                      <label for="quinta">Quinta-Feira</label>
+                    </div>
+                    <div class="dia">
+                      <input type="checkbox" name="diaReuniao" id="Sexta-Feira" value="Sexta-Feira" >
+                      <label for="sexta">Sexta-Feira</label>
+                    </div>
+                    <div class="dia">
+                      <input type="checkbox" name="diaReuniao" id="Sábado" value="Sábado">
+                      <label for="sabado">Sábado</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="imgGrupo">
+              <label>Imagem do grupo:</label>
+              <div class="upload">
+                  <input type="file" name="imgGrupo" id="imgGrupo">
+              </div>
+            </div>
+      
+            <div class="descricao">
+              <label for="descricao">Descrição do grupo:</label>
+              <textarea name="descricao" id="descricao"><%= grupo.descricao %></textarea>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btnCE" data-dismiss="modal">Fechar</button>
+              <button type="submit" name="fecha" class="btn btnCE">Editar</button>
+            </div>
+            
+            </form>
+        </div>
+
+      </div>
+    </div>
+  </div>

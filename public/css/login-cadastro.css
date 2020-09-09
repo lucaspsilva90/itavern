@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shojumaru&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+    
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.row{
+    margin: 0;
+}
+
+/*
+**FORMATAÇÃO PARA OS DOIS LADOS
+*/
+
+#conteudo-1, #conteudo-2{
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*
+**PARTE ESQUERDA
+*/
+
+#principal-esquerda{
+    background-color: #F5DEB0;
+    min-height: 100vh;
+}
+
+#conteudo-1 img{
+    margin: 40px auto;
+    max-width:200px;
+    max-height:201px;
+    width: auto;
+    height: auto;
+}
+
+#nome-itavern{
+    height: 10%;
+    text-align: center;
+}
+
+#nome-itavern h1{
+    text-align: center;
+    font-size: 2.5em;
+    font-family: 'Shojumaru', cursive;
+}
+
+#nome-itavern h3{
+    text-align: center;
+    font-size: 1em;
+}
+
+#lista{
+    margin-top: 50px;
+}
+
+#lista ul, #conteudo-2 #redes-sociais ul{
+    font-size: 0.9em;
+    list-style: none;
+}
+
+#lista ul li{
+    padding: 12px;
+}
+
+#conteudo-1 button{
+    width: 120px;
+    height: 45px;
+    border-radius: 5px;
+    background-color: #D98C4A;
+    margin: 50px;
+}
+
+
+/*
+**PARTE DIREITA
+*/
+#principal-direita{
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+#conteudo-2{
+    width: 90%;
+}
+
+#conteudo-2 .ou{
+    margin: 20px;
+}
+
+#conteudo-2 h1{
+    font-size: 1.8em;
+    font-family: 'Shojumaru', cursive;
+    text-align: center;
+}
+
+#conteudo-2 #login h1{
+    margin-top: -20px;
+}
+
+#conteudo-2 #redes-sociais{
+    margin: 25px auto;
+}
+
+#conteudo-2 #redes-sociais ul li{
+    padding: 10px 0px;
+}
+
+#conteudo-2 #redes-sociais ul li button, #login input, #login button.entrar, #login button.criar-conta{
+    min-width: 230px;
+    margin: 0 auto;
+    height: 40px;
+    border-radius: 5px;
+}
+
+#conteudo-2 .facebook{
+    background-color: #3B5998;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#conteudo-2 .fa{
+    font-size: 1.4em;
+    padding-right: 30px;
+    padding-top: 3px;
+}
+
+#conteudo-2 .google{
+    background-color: #EA4335;
+    text-align: left;
+    padding-left: 10px;
+}
+
+
+#conteudo-2 .twitter{
+    background-color: #00ACEE;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#imgIndex{
+    border-radius: 10%;
+}
+
+button{
+    color: #ffffff;
+}
+
+#conteudo-2 h4{
+    margin: 15px 0;
+    font-family: 'Shojumaru', cursive;
+    font-size: 1.2em;
+}
+
+#login{
+    margin-top: 60px;
+}
+
+#login h1{
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+#login #logar{
+    margin: 0 auto;
+}
+
+#login #logar input{
+    margin: 7px auto;
+    padding: 10px;
+}
+
+#login #logar a{
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+#login #logar a h4{
+    width: 230px;
+    font-family: 'Roboto', sans-serif;;
+    font-size: 0.8em;
+    margin-top: -8px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#login button.entrar{
+    background-color: #D98C4A;
+    margin-bottom: 20px;
+}
+
+#login button.criar-conta{
+    color: #D98C4A;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid #D98C4A;
+    margin-bottom: 10px;
+}
+
+#falhaLogin h6{
+    color:red;
+}
+
+/*
+** MODAL
+*/
+
+#dGIndex{
+    height: initial;
+    display: flex;
+    background-color: var(--clr-primary-light);
+    font-size: 1.2rem;
+}
+
+.modal-dialog{
+    margin: 0 auto;
+    min-width: 580px;
+}
+.modal-body{
+    grid-row: 2 / 7;
+}
+.modal-body .row{
+    border-top: 1px solid black;
+}
+
+#linha1{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+.sobrenomeUser{
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body .row input{
+    min-width: 50px;
+    max-width: 250px;
+}
+
+.modal-body .row input#emailUser, .modal-body .row input#senhaUser, .modal-body .row input#confirmarSenhaUser{
+    min-width: 490px;
+}
+
+#restricoes{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px;
+    color: #982424;
+}
+
+.modal-footer{
+    grid-row: 8;
+    grid-column: 1/-1;
+    padding-right: 5%;
+    margin-right: 10px;
+    /* margin-bottom: 30px; */
+}
+
+/*
+**ESQUECEU A SENHA
+*/
+#formatoExterno{
+    height: auto;
+    width: 350px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: var(--clr-primary-light);
+}
+
+#divBotoes{
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 0;
+}
+
+#emailRec{
+    margin-top: 15px;
+    width: 90%;
+}
+
+#recupera{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#informa{
+    font-size: 0.7rem;
+    width: 70%;
+}
+
+#erroRec{
+    color: #982424;
+    font-size: 1rem;
+}
+
+/*Medium devices*/
+@media (min-width: 767.98px) and (max-width: 1230px) {
+    #conteudo-1, #conteudo-2{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #conteudo-2 #redes-sociais ul li button, #login input{
+        min-width: 250px;
+        margin: 0 auto;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+    #lista ul, #conteudo-2 #redes-sociais ul{
+        font-size: 1.0em;
+    }
+
+    #conteudo-1 button{
+        width: 150px;
+        height: 50px;
+        font-size: 1.2em;
+    }
+
+    #conteudo-2{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .ou{
+        margin: 70px auto;
+    }
+
+    #login{
+        margin-top: 50px;
+    }
+
+    #conteudo-2 .facebook, #conteudo-2 .google, #conteudo-2 .twitter{
+        font-size: 1.1em;
+    }
+
+    #login #logar a{
+        font-size: 1.0em;
+    }
+
+    #login .entrar{
+        font-size: 1.2em;
+    }
+}

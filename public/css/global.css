@@ -1,0 +1,404 @@
+/* ============================ FONTS ===============================*/
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower|Oswald:300,400,700&display=swap");
+
+/* =========================== VARIABLES ========================*/
+:root {
+  /*colors*/
+  --clr-primary: #d98c4a;
+  --clr-primary-light: #f2cf8d;
+  --clr-primary-light2: #f2da91;
+  --clr-primary-dark: #a6401b;
+  --clr-primary-bg: #d1dbe25e;
+
+  --clr-grey-1: #102a42;
+  --clr-grey-2: #333333;
+  --clr-grey-3: #555555;
+  --clr-grey-4: #777777;
+
+  --clr-grey-5: #617d98;
+  --clr-grey-10: #f2f2f2;
+  --clr-grey-11: #d1dbe2;
+  --clr-white: #fff;
+
+  /*fonts*/
+  --ff-primary: "Oswald", sans-serif;
+  --ff-secondary: "Indie Flower", cursive;
+
+  /**/
+  --transition: all 0.5s ease;
+  --spacing: 0.15rem;
+  --radius: 1rem;
+  --box-shadow: 0 5px 10px rgb(0, 0, 0, 0.1);
+  --box-shadow-heavy: 0 5px 10px rgb(0, 0, 0, 0.2);
+}
+
+/*================================Global CSS====================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-primary);
+  background: var(--clr-primary-bg);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 800px) {
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+}
+
+.btn {
+  background-color: var(--clr-primary);
+  border-color: var(--clr-primary);
+  color: white;
+}
+
+.btn:hover {
+  background-color: var(--clr-primary-dark);
+  border-color: var(--clr-primary-dark);
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: var(--clr-primary-light);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #a6401b75;
+}
+
+/*================================End of global CSS====================================*/
+/*===============================Navbar/sidebar========================================*/
+
+.profile-picture {
+  margin: 0rem auto;
+  border: solid 5px var(--clr-primary);
+  border-radius: 50%;
+  max-width: 140px;
+  min-width: 140px;
+  max-height: 140px;
+  min-height: 140px;
+  width: auto;
+  height: auto;
+}
+
+.nav-btn {
+  color: var(--clr-primary-dark);
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-size: 2rem;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.navbar-c {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  background: var(--clr-grey-10);
+  box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 10px 3px 0 rgba(0, 0, 0, .02);
+  z-index: 2;
+  transform: translateX(-100%);
+  transition: 0.5s ease-out;
+}
+
+.body-overflow {
+  overflow: hidden;
+}
+
+.showNav {
+  transform: translate(0%);
+  z-index: 12;
+}
+
+.navbar-header-c {
+  text-align: right;
+}
+
+.profile-name {
+  text-align: center;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: var(--clr-grey-1);
+  margin-top: 1rem;
+}
+
+.nav-close {
+  font-size: 2.5rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  color: var(--clr-primary);
+  transition: var(--transition);
+}
+
+.nav-close:hover {
+  color: red;
+}
+
+.nav-items {
+  list-style-type: none;
+  display: block;
+  margin-top: 1.5rem;
+}
+
+.nav-link {
+  display: block;
+  font-size: 1rem;
+  padding: 1rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+  color: var(--clr-grey-5);
+  transition: var(--transition);
+}
+
+.nav-icon {
+  display: inline-block;
+  color: var(--clr-primary);
+  margin-right: 1rem;
+  transition: var(--transition);
+}
+
+.nav-text {
+  transition: var(--transition);
+  color: #555577
+}
+
+.nav-link:hover {
+  background-color: var(--clr-primary-light);
+  border-left: solid var(--clr-primary) 4px;
+}
+
+.nav-link:hover .nav-text {
+  color: var(--clr-primary-dark);
+  padding-left: 1rem;
+}
+
+.nav-link:hover .nav-icon {
+  padding-left: 0.5rem;
+  color: var(--clr-primary-dark);
+  transform: scale(1.6);
+}
+
+.perfil-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 0.2rem;
+}
+
+.perfil-btn a {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 8rem;
+}
+
+.btn-outline-primary {
+  font-weight: 700;
+  letter-spacing: var(--spacing);
+}
+
+@media screen and (min-width: 600px) {
+  .body-overflow {
+    overflow-y: scroll;
+  }
+
+  .navbar-c {
+    width: 50vw;
+    max-width: 16rem;
+  }
+}
+
+@media screen and (min-height: 820px) {
+  .nav-link {
+    display: block;
+  }
+
+  .profile-name {
+    margin-bottom: 4rem;
+  }
+
+  .perfil-btn a {
+    padding: 1rem 0.5rem;
+    width: 6rem;
+  }
+
+  .profile-picture {
+    width: 140px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .nav-btn {
+    display: none;
+  }
+
+  .body-overflow {
+    overflow: scroll;
+  }
+
+  .navbar-c {
+    position: absolute;
+    max-width: none;
+    max-height: 800px;
+
+    transform: translateX(0%);
+    background: none;
+    box-shadow: none;
+    padding-top: 2rem;
+    /* padding-left: calc((50% - 600px) / 10); */
+    width: calc(50% - 600px);
+    /* border-right: solid red 4px; */
+  }
+
+  .nav-link:hover {
+    border: none;
+    border-radius: 2rem;
+  }
+
+  .nav-link:hover .nav-text {
+    padding-left: 0.8rem;
+  }
+
+  .nav-text {
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .nav-link:hover .nav-icon {
+    padding-left: 0.5rem;
+    color: var(--clr-primary-dark);
+    transform: scale(1.6);
+  }
+
+  .nav-close {
+    display: none;
+  }
+
+  .profile-name {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1750px) {
+  .nav-items {
+    padding-left: 2rem;
+  }
+
+  .nav-text {
+    font-size: 1rem;
+    letter-spacing: var(--spacing);
+  }
+
+  .nav-link:hover .nav-text {
+    padding-left: 1.75rem;
+  }
+}
+
+/* ==========================================grupos======================================== */
+
+/* ==========================================footer======================================== */
+footer {
+  padding: 2rem 0rem;
+  background-color: #222;
+  text-align: center;
+  z-index: 5;
+}
+
+.social-icon {
+  color: var(--clr-white);
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: var(--transition);
+}
+
+.social-icon:hover {
+  color: var(--clr-primary);
+}
+
+.footer-text {
+  margin-top: 1.25rem;
+  color: var(--clr-white);
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.company {
+  text-transform: none;
+  font-size: 1.25rem;
+  color: var(--clr-primary);
+}

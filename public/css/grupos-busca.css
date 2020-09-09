@@ -1,0 +1,104 @@
+/* ==========================================searchbar======================================== */
+
+.searchbar {
+  position: relative;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background-color: var(--clr-primary-light);
+}
+
+/* Grupos */
+
+.grupos {
+  min-height: 120vh;
+  background: white;
+}
+
+.card {
+  transition: var(--transition);
+  position: relative;
+  border-radius: var(--radius);
+  box-shadow: 0 5px 15px rgb(0, 0, 0, 0.2);
+  font-family: var(--ff-primary);
+  width: (400px);
+}
+
+.card-body {
+  border-radius: var(--radius);
+  background-color: var(--clr-grey-10);
+
+}
+
+.card-img-top {
+  height: 14vh;
+  object-fit: cover;
+  border-radius: var(--radius) var(--radius) 0 0;
+
+}
+
+.card:hover {
+  box-shadow: 0 5px 15px rgb(0, 0, 0, 0.3);
+  transform: scale(1.01);
+}
+
+.cover-container {
+  position: relative;
+}
+
+.group-icon {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, +50%);
+  font-size: 3rem;
+  border-radius: 50%;
+  border: solid 5px var(--clr-grey-10);
+  color: white;
+  background-color: var(--clr-primary-dark);
+  overflow: hidden;
+}
+
+.group-perks {
+  list-style: none;
+  color: var(--clr-grey-5);
+}
+
+.group-title {
+  margin-top: 10px;
+  letter-spacing: 0;
+}
+
+.group-game {
+  font-family: var(--ff-secondary);
+  color: var(--clr-primary-dark);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.btn-grupo {
+  margin-top: 0rem;
+  width: 5rem;
+}
+
+#semGrupoBusca{
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  margin-top: 5%;
+}
+
+form {
+  display: inline;
+}
+
+/*Media queries pra consertar a imagem dos cards dos grupos*/
+
+@media screen and (max-width: 768px) {
+  .card-img-top {
+    height: 20vh;
+  }
+}
+@media(max-width:350px){
+  .btn-grupo{
+    width: 4.1rem;
+  }
+}

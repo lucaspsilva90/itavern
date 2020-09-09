@@ -1,0 +1,144 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" id="dXGCriar" role="document">
+    <div class="modal-content" id="dGGCriar">
+        <div class="modal-header">
+          <div class="titulo">
+            <h5 class="modal-title" id="exampleModalLabel">Crie o grupo</h5>
+          </div>
+          <div class="botao">
+            <button type="button" name="fecha" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">X</span>
+            </button>
+          </div>
+        </div>
+        <div class="modal-body" id="bodyCriar">
+          <div id="avisos" class="invi"></div>
+          <form action="/grupos/criargrupo" id="criarSala" class="formulario" method="post" enctype="multipart/form-data">
+    
+            <div class="nomeGrupo">
+                <label for="nomeGrupo">*Nome do Grupo:</label>
+                <input class="obrig" type="text" name="nome" id="nomeGrupo">
+            </div>
+        
+            <div class="nomeJogo">
+                <label for="nomeJogo">*Nome do Jogo:</label>
+                    <select class="obrig" id="nomeJogo" name="nomeJogo">
+                      <option selected disabled>Selecione</option>
+                         <% for(jogo of jogos){ %>
+                            <option value="<%= jogo.id %>"><%= jogo.nome %></option>
+                        <%  }  %>
+                    </select>
+            </div>
+        
+            <div class="inicio">
+                <label for="inicio">*Início das Reuniões:</label>
+                <input class="obrig" type="text" name="inicioReuniao" id="inicio" placeholder="dd/mm/aaaa"><!-- calendario será aprimorado -->
+            </div>
+
+            <div class="horario">
+              <label for="horario">*Horario das Reuniões:</label>
+              <input class="obrig" type="time" name="horario" min="00:00" max="23:59" id="horario">
+          </div>
+
+          <div class="duracao">
+            <label for="duracao">*Tempo de jogo:</label>
+            <input class="obrig" type="text" name="tempoJogo" min="0" id="duracao" maxlength="5">
+          </div>
+
+          <div class="numJogadores">
+            <label for="numJogador">*Nº de Jogadores:</label>
+            <input class="obrig" type="number" name="numJogadores" id="numJogador" min="2" step="1" pattern="\d*"  >
+          </div>
+    
+        
+            <div class="endereco">
+                <div class="cep">
+                    <label for="cep">*CEP:</label>
+                    <input class="obrig" type="text" name="cep" id="cep-create" placeholder="Apenas números" value="" maxlength="9">
+                </div>
+
+                <div class="numero">
+                  <label for="numero">*Número:</label>
+                  <input class="obrig" type="text" name="numero" id="numero">
+                </div>
+      
+                <div class="complemento">
+                  <label for="complemento">Complemento:</label>
+                  <input type="text" name="complemento" id="complemento">
+                </div>
+        
+                <div class="cidade">
+                    <label for="cidade">*Cidade:</label>
+                    <input type="text" name="cidade" id="cidade" disabled>
+                </div>
+        
+                <div class="rua">
+                    <label for="endereco">*Endereço:</label>
+                    <input type="text" name="endereco" id="endereco" value="" >
+                </div>
+        
+                
+            </div>
+        
+            <label id="textOpcoes">*Dias de reunião:</label>
+            <div class="opcoes">
+                <div class="diaReuniao">
+                    <div class="dia">
+                      <input type="checkbox" name="diasReuniao" id="Domingo" value="Domingo">
+                      <label for="Domingo">Domingo</label>
+                    </div>
+                    <div class="dia">
+                      <input type="checkbox" name="diasReuniao" id="Segunda-Feira" value="Segunda-Feira" >
+                      <label for="Segunda-Feira">Segunda-Feira</label>
+                    </div>
+                    <div class="dia">
+                      <input type="checkbox" name="diasReuniao" id="Terça-Feira" value="Terça-Feira" >
+                      <label for="Terça-Feira">Terça-Feira</label>
+                    </div>
+                    <div class="dia">
+                      <input type="checkbox" name="diasReuniao" id="Quarta-Feira" value="Quarta-Feira" >
+                      <label for="Quarta-Feira">Quarta-Feira</label>
+                    </div>
+                    <div class="dia">
+                      <input type="checkbox" name="diasReuniao" id="Quinta-Feira" value="Quinta-Feira" >
+                      <label for="Quinta-Feira">Quinta-Feira</label>
+                    </div>
+                    <div class="dia">
+                      <input type="checkbox" name="diasReuniao" id="Sexta-Feira" value="Sexta-Feira" >
+                      <label for="Sexta-Feira">Sexta-Feira</label>
+                    </div>
+                    <div class="dia">
+                      <input type="checkbox" name="diasReuniao" id="Sábado" value="Sábado">
+                      <label for="Sábado">Sábado</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="imgGrupo">
+              <label>*Imagem do grupo:</label>
+              <div class="upload">
+                  <input class="obrig" type="file" name="imgGrupo" id="imgGrupo">
+              </div>
+            </div>
+      
+            <div class="descricao">
+              <label for="descricao">Descrição do grupo:</label>
+              <textarea name="descricao" id="descricao"></textarea>
+            </div>
+      
+
+            <div class="modal-footer" id="footCriar">
+              <div id='obrigatorio'>*Campos obrigatórios</div>
+              <div id='btnsCriar'>
+                <button type="button" class="btn btnCE" name="fecha" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btnCE" id="btnCriarSala">Criar</button>
+              </div>
+            </div>
+            </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+

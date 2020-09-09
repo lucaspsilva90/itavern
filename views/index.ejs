@@ -1,0 +1,136 @@
+<%- include('parts/head',{title:'iTavern'}); %>
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/login-cadastro.css">
+<%- include('esqueciSenha',{title:'iTavern'}); %>
+    
+
+<!-- INICIO -->
+    <div class="row" class="container">
+
+
+        <!-- PARTE ESQUERDA -->
+        <div class="col-md-6" id="principal-esquerda">
+            <div id="conteudo-1">
+                <img src="images/logo-itavern.png" alt="iTavern Logo">
+                <div id="nome-itavern">
+                    <h1>iTavern</h1>
+                    <h3>Rede social para Games</h3>   
+                </div>
+                <div id="lista">
+                    <ul>
+                        <li>Procure grupos na sua região</li>
+                        <li>Filtre por vaga/tamanho do grupo</li>
+                        <li>Marque encontros</li>
+                    </ul>
+                </div>
+                <!-- <button>Saiba mais</button> -->
+            </div>
+        </div>
+
+
+
+        <!-- PARTE DIREITA -->
+        <div class="col-md-6" id="principal-direita">
+            <div id="conteudo-2">
+                
+                <div id="redes-sociais">
+                    <!-- <ul>
+                        <li><button class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i>Entre com Facebook</button></li>
+                        <li><button class="google"><i class="fa fa-google" aria-hidden="true"></i>Entre com Google</button> </li>
+                        <li><button class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Entre com Twitter</button></li>
+                    </ul>
+                </div>
+                <div class="ou">
+                    <h4>ou</h4> -->
+                    <img src="/images/covers/group-cover7.jpeg" id="imgIndex">
+                </div>
+                <h1>LOGIN</h1>
+                <div id="login">
+                    <h1>Insira sua conta iTavern</h1>
+                    <div id="falhaLogin" class="invi">
+                        <h6><%= email %></h6>
+                    </div>
+                    <div id="logar">
+                        <form action="/login" method="POST" >
+                            <input id="email" type="email" name="email"placeholder="Email"><br>
+                            <input id="senha" type="password" name="senha" placeholder="Senha">
+                            <a data-toggle="modal" data-target="#esqueciSenha"><h4>Esqueceu sua senha?</h4></a>
+                            <button id="login" type="submit" class="entrar">Entrar</button><br>
+                        </form>
+                    </div>
+                    <button class="criar-conta" data-toggle="modal" data-target="#modalCadastro">Criar conta</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CADASTRO -->
+
+    <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <form action="cadastro/submit" method="POST">
+                <div class="modal-content" id="dGIndex">
+                    <div class="modal-header">
+                    <div class="titulo">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Cadastro</h5>
+                    </div>
+                    <div class="botao">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="invi col-12" id="restricoes">
+
+                            </div>
+                            <div id="linha1">
+                                <label class="nomeUser col-6">
+                                    Nome:
+                                    <input type="text" name="nome" id="nomeUser">
+                                </label>
+                                
+                                <label class="sobrenomeUser col-6">
+                                    Nome de Usuário:
+                                    <input type="text" name="nickname" id="sobrenomeUser" maxlength="20">
+                                </label>
+                            </div>
+
+                            <label class="emailUser col-12">
+                                Email:
+                                <input type="email" name="email" id="emailUser">
+                            </label>
+                            
+                            <label class="senhaUser col-12">
+                                Senha:
+                                <input type="password" name="senha" id="senhaUser" >
+                            </label>
+
+                            <label class="senhaUser col-12">
+                                Confirmar senha:
+                                <input type="password" name="senha2" id="confirmarSenhaUser">
+                            </label>
+                            <div class="invi col-12" id="checkSenha">
+    
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="btnCriarConta" class="btn btn-secondary">Cadastrar</button>
+                    </div>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/46bd2a5d08.js"></script>
+    <script src="/javascripts/jquery.mask.min.js"></script>
+    <script src="/javascripts/login.js"></script>
+</body>
+</html>

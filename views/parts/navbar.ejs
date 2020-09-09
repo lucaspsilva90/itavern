@@ -1,0 +1,110 @@
+<!-- navbar -->
+<!-- navbutton -->
+<style>
+  #<%=current_page %>:hover {
+    background: none;
+  }
+
+  #<%=current_page %>>.nav-text {
+    color: var(--clr-primary-dark);
+    font-size: 1.25rem;
+  }
+
+  #<%=current_page %>>.nav-icon {
+    color: var(--clr-primary-dark);
+    font-size: 1.5rem;
+  }
+</style>
+<nav class="navbar-c" id="navbar">
+  <div class="navbar-header-c">
+    <span class="nav-close" id="nav-close">
+      <i class="fas fa-times"></i>
+    </span>
+    <img src="<%= imgPerfil %>" alt="" class="profile-picture" />
+    <h3 class="profile-name" id="userAtual"><%= nickname %></h3>
+  </div>
+  <ul class="nav-items">
+    <!-- Inicio de um link da navbar -->
+    <li>
+      <a href="/home/" id="home" class="nav-link">
+        <i class="fas fa-home fa-fw nav-icon"></i>
+        <span class="nav-text">Home</span>
+      </a>
+    </li>
+    <!-- fim de um link da navbar -->
+    <!-- Inicio de um link da navbar -->
+    <li>
+      <a href="/perfil/" id="perfil" class="nav-link">
+        <i class="fas fa-user-alt fa-fw nav-icon"></i>
+        <span class="nav-text">Perfil</span>
+      </a>
+    </li>
+    <!-- fim de um link da navbar -->
+    <!-- Inicio de um link da navbar -->
+    
+    <!--
+    <li>
+      <a href="/grupos/" id="grupos" class="nav-link">
+        <i class="fas fa-users fa-fw nav-icon"></i>
+        <span class="nav-text">Grupos</span></a>
+    </li>
+    
+    -->
+
+    <!-- fim de um link da navbar -->
+    <!-- Inicio de um link da navbar -->
+    <li>
+      <a href="/grupos/editarGrupos/" id="editarGrupos" class="nav-link">
+        <i class="fas fa-users fa-fw nav-icon"></i>
+        <span class="nav-text">Editar Grupos</span></a>
+    </li>
+    <!-- fim de um link da navbar -->
+    <!-- Inicio de um link da navbar -->
+    <li>
+      <a href="#" class="nav-link" data-toggle="modal" data-target="#exampleModal">
+        <i class="fas fa-dungeon fa-fw nav-icon"></i>
+        <span class="nav-text">Criar Grupo</span></a>
+    </li>
+    <!-- fim de um link da navbar -->
+    <!-- Inicio de um link da navbar -->
+    <li>
+      <a href="/grupos/search" id="buscar-grupos" class="nav-link">
+        <i class="fas fa-dice fa-fw nav-icon"></i>
+        <span class="nav-text">Buscar Grupos</span>
+      </a>
+    </li>
+    <!-- fim de um link da navbar -->
+    <!-- Inicio de um link da navbar -->
+    <!-- <li>
+      <a href="#" id="amigos" class="nav-link">
+        <i class="fas fa-user-friends nav-icon"></i>
+        <span class="nav-text">Amigos</span></a>
+    </li> -->
+    <!-- fim de um link da navbar -->
+    <!-- Inicio de um link da navbar -->
+    <!-- <li>
+      <a href="#" id="historico" class="nav-link">
+        <i class="fas fa-scroll nav-icon"></i>
+        <span class="nav-text">Histórico</span>
+      </a>
+    </li> -->
+    <!-- fim de um link da navbar -->
+
+    <!-- Inicio de um link da navbar -->
+    <!-- <li>
+      <a href="#" id="opcoes" class="nav-link">
+        <i class="fas fa-cog nav-icon"></i>
+        <span class="nav-text">opções</span>
+      </a>
+    </li> -->
+    <!-- fim de um link da navbar -->
+    <!-- Inicio de um link da navbar -->
+    <li>
+      <a href="/sair" id="sair" class="nav-link">
+        <i class="fas fa-door-open nav-icon"></i>
+        <span class="nav-text">Sair</span>
+      </a>
+    </li>
+    <!-- fim de um link da navbar -->
+  </ul>
+</nav>

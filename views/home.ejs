@@ -1,0 +1,53 @@
+<%- include('parts/head',{title:'iTavern | Home'}); %>
+<link rel="stylesheet" href="/css/grupos-busca.css" />
+<link rel="stylesheet" href="/css/home.css" />
+<%- include('./criarSala',{jogos}); %>
+<%- include('parts/navbar', {current_page:'home'}); %>
+<%- include('./info'); %>
+<main>
+  <span class="nav-btn" id="nav-btn">
+    <i class="fas fa-bars"></i>
+  </span>
+  <section class="meusGrupos">
+    <div class="section-header">
+      <h3 class="section-title">meus grupos</h3>
+      <div class="separator"></div>
+      <a href="#" class="btn" data-toggle="modal" data-target="#exampleModal">
+        novo
+      </a>
+    </div>
+    <div class="groups-container">
+      <!-- Inicio de um card de grupo -->
+      <% let x = 0; %>
+      <% for(grupo of gruposDB){ %>
+      <article class="card" id="<%= grupo.id %>">
+        <div class="cover-container">
+          <img src="/images/covers/<%= grupo.img %>" class="card-img-top" alt="..." />
+          <i class="<%= grupo.icon %> fa-fw group-icon"></i>
+        </div>
+        <div class="card-body text-center">
+          <h3 class="group-title"><%= grupo.nome %></h3>
+          <h4 class="group-game"><%= grupo.jogoDoGrupo.nome%></h4>
+          <ul class="group-perks">
+            <li>
+              Membros:
+              <span class="text-warning"><%= participantes[x] %>/<%= grupo.numJogadores %></span>
+            </li>
+            <li>Início das reuniões: <%= grupo.inicioReuniao %></li>
+            <li style="height: 50px;">Reuniões: <%= grupo.diasReuniao %></li>
+          </ul>
+
+          <a href="#" class="btn btn-grupo info" data-toggle="modal" data-target="#exampleModalCenter">Info</a>
+          <form action="/grupo/<%= grupo.id %>" method="GET">
+            <input class="btn btn-danger btn-grupo" type="submit" value="Chat"/>
+          </form>
+        </div>
+      </article>
+      <% x++ %>
+      <% } %>
+      <!-- Fim de um card de grupo -->
+    </div>
+  </section>
+  <script src="/javascripts/home.js"></script>
+</main>
+<%- include('parts/foot'); %>

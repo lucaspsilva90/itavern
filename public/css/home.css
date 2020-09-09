@@ -1,0 +1,109 @@
+main {
+  min-height: 100vh;
+  max-width: 1170px;
+  background-color: white;
+  margin: 0 auto;
+  box-shadow: var(--box-shadow)
+}
+
+section {
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.groups-container {
+  width: 95%;
+  margin: auto;
+  border-radius: var(--radius);
+  padding: 1.25rem 0rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--clr-primary);
+  padding-bottom: .5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  /* text-shadow: #b26b2a 2px 1px 0px; */
+}
+
+.section-header {
+  position: relative;
+
+}
+
+.section-header .btn {
+  text-transform: uppercase;
+  position: absolute;
+  right: 0;
+  top: 7px;
+}
+
+.btn:hover {
+  color: white;
+}
+
+.separator {
+  width: 70%;
+  margin: auto;
+  height: 4px;
+  background: linear-gradient(to left,
+      var(--clr-primary-light),
+      var(--clr-primary),
+      var(--clr-primary-light));
+}
+
+.group-icon {
+  border: solid 4px var(--clr-grey-10);
+  font-size: 2.5rem;
+}
+
+.group-title {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
+.card-img-top {
+  height: 100px;
+}
+
+.group-game {
+  font-size: 1rem;
+}
+
+.card {
+  flex: 0 0 70%;
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+@media screen and (min-width: 576px) {
+  .card {
+    flex: 0 0 calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    flex: 0 0 calc(33.33% - 2rem);
+  }
+
+  .section-header .btn {
+    position: absolute;
+    top: 0px;
+    right: 15%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .card {
+    flex: 0 0 calc(25% - 3rem);
+  }
+}

@@ -1,0 +1,81 @@
+<%- include('parts/head',{title:'iTavern | Editar Grupos'}); %>
+<link rel="stylesheet" href="/css/grupos-busca.css" />
+<link rel="stylesheet" href="/css/home.css" />
+<%- include('./criarSala',{jogos}); %>
+<%- include('parts/navbar', {current_page:'Editar Grupos'}); %>
+
+<main>
+  <span class="nav-btn" id="nav-btn">
+    <i class="fas fa-bars"></i>
+  </span>
+  <section class="meusGrupos">
+    <div class="section-header">
+      <h3 class="section-title">Meus grupos criados</h3>
+      <div class="separator"></div>
+      <a href="#" class="btn" data-toggle="modal" data-target="#exampleModal">
+        novo
+      </a>
+    </div>
+    <div class="groups-container">
+      
+      <p id="invi4" class="invi"><%= meusGrupos.length %></p>
+
+      <div id="semGrupo" class="invi">
+        <h2>você não gerencia nenhum grupo</h2>
+      </div>
+
+      <!-- Inicio de um card de grupo -->
+      <%let x = 0;%>
+      <% for(grupo of meusGrupos){ %>
+        <article class="card" id="<%= grupo.id %>">
+          <div class="cover-container">
+            <img src="<%= grupo.img %>" class="card-img-top" alt="..." />
+            <i class="<%= grupo.icon %> fa-fw group-icon"></i>
+            </div>
+            <div class="card-body text-center">
+              <h3 class="group-title"><%= grupo.nome %></h3>
+              <h4 class="group-game"><%= grupo.jogoDoGrupo.nome %></h4>
+              <ul class="group-perks">
+                <li>
+                  Membros:
+                  <span class="text-warning"><%= participantes[x] %>/<%= grupo.numJogadores %></span>
+                </li>
+                <li>Começou em: <%= grupo.inicioReuniao %></li>
+                <li style="height: 50px;">Reuniões: <%= grupo.diasReuniao %></li>
+              </ul>
+              
+              <a href="#" class="btn btn-grupo edit" data-toggle="modal" data-target="#exampleModalEdit<%= x %>">Editar</a>
+              <a href="#" class="btn btn-grupo deletar" data-toggle="modal" data-target="#delete">Desfazer</a>
+            </div>
+          </article>
+          <%- include('editarSala', {grupo, x}); %>
+          <% x++ ;%>
+          <% } %>
+          <!-- Fim de um card de grupo -->
+          <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog caixa" role="document">
+              <div class="modal-content tCaixa">
+                <div class="modal-header">
+                  <div class="titulo">
+                    <h5>Deseja desfazer esse grupo?</h5>
+                  </div>
+                  <div class="botao">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">X</span>
+                    </button>
+                  </div>
+                </div>
+                <h5 class="alerta">Essa ação não é reversível !</h5>
+                <div class="conteudo">
+                  <button type="button" class="btn" id="cancela" data-dismiss="modal">Cancelar</button>
+                  <button type="submit" class="btn" id="confirma" data-dismiss="modal">Confirmar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  </section>
+  <script src="/javascripts/editarSala.js"></script>
+</main>
+<%- include('parts/foot'); %>
