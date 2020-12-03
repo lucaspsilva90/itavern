@@ -1,0 +1,9 @@
+{
+    "development": {
+       "username": "admin",
+       "password": "lucas123",
+       "database": "itavern_demo",
+       "host": "104.196.63.85",
+       "dialect": "mysql"
+     }
+}
